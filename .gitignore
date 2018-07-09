@@ -1,0 +1,6 @@
+#Ignore these directories
+/target
+workspace.xml
+
+
+
