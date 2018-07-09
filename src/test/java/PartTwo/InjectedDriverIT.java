@@ -88,10 +88,10 @@ public class InjectedDriverIT {
             robot.keyRelease(KeyEvent.VK_CONTROL);
             //driver.get(baseUrl.toString());
 
-            //googlePage = new GooglePage(driver);
+           /* //googlePage = new GooglePage(driver);
             //googlePage.search("Pisici");
-        /*String originalWindow = driver.getWindowHandle();
-        driver.switchTo().window(originalWindow);*/
+        *//*String originalWindow = driver.getWindowHandle();
+        driver.switchTo().window(originalWindow);*//*
         //driver.switchTo().defaultContent();
         WebElement input = driver.findElement(By.id("lst-ib"));
         //new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(input));
@@ -99,6 +99,6 @@ public class InjectedDriverIT {
         input.clear();
         input.sendKeys("Marius Patru Linkedin");
         WebElement search = driver.findElement(By.name("btnK"));
-        search.click();
+        search.click();*/
     }
 }
