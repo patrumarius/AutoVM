@@ -79,13 +79,13 @@ public class InjectedDriverIT {
             robot.delay(1000);
 
 
-            //driver.switchTo().window(originalWindow);
+            driver.switchTo().window(originalWindow);
             
-            /*robot.delay(5000);
+            robot.delay(5000);
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_TAB);
             robot.delay(1000);
-            robot.keyRelease(KeyEvent.VK_CONTROL);*/
+            robot.keyRelease(KeyEvent.VK_CONTROL);
             //driver.get(baseUrl.toString());
 
             //googlePage = new GooglePage(driver);
