@@ -1,7 +1,7 @@
 package PageObjects;
 
 //import javafx.scene.shape.Path;
-import org.openqa.selenium.By;
+/*import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -34,4 +34,4 @@ public class LoadingPageFactory {
         }
         return PageFactory.initElements(driver, pageObjectClass);
     }
-}
+}*/

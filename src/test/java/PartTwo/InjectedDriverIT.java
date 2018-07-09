@@ -20,15 +20,19 @@ import java.net.URI;
 @ContextConfiguration(classes = WebDriverConfig.class)
 public class InjectedDriverIT {
 
+    //GooglePage googlePage;
+
     @Inject
-    private WebDriver driver;    @Inject
+    private WebDriver driver;
+
+    @Inject
     private URI baseUrl;
 
     @Test
     public void loadIndexPage() throws Exception{
 
-        driver.get(baseUrl.toString());
-        //String originalWindow = driver.getWindowHandle();
+            driver.get(baseUrl.toString());
+            String originalWindow = driver.getWindowHandle();
             Robot robot = new Robot();
 
             //robot.keyPress(KeyEvent.VK_ALT);
@@ -62,15 +66,30 @@ public class InjectedDriverIT {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 
-            //driver.switchTo().defaultContent();
+            ss = new StringSelection("pisici");
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            robot.delay(1000);
+
+
+            //driver.switchTo().window(originalWindow);
             
             /*robot.delay(5000);
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_TAB);
             robot.delay(1000);
             robot.keyRelease(KeyEvent.VK_CONTROL);*/
-            
+            //driver.get(baseUrl.toString());
 
+            //googlePage = new GooglePage(driver);
+            //googlePage.search("Pisici");
         /*String originalWindow = driver.getWindowHandle();
         driver.switchTo().window(originalWindow);*/
         //driver.switchTo().defaultContent();
