@@ -15,6 +15,7 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.net.URI;
+import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = WebDriverConfig.class)
@@ -39,10 +40,10 @@ public class InjectedDriverIT {
             //robot.keyPress(KeyEvent.VK_TAB);
 
             robot.delay(1000);
-            robot.keyRelease(KeyEvent.VK_ALT);
-            robot.keyRelease(KeyEvent.VK_TAB);
+            /*robot.keyRelease(KeyEvent.VK_ALT);
+            robot.keyRelease(KeyEvent.VK_TAB);*/
 
-            robot.delay(1000);
+            /*robot.delay(1000);
             StringSelection ss = new StringSelection("b79630  ");
             Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
@@ -53,9 +54,12 @@ public class InjectedDriverIT {
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.delay(1000);
             robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_TAB);*/
 
-            ss = new StringSelection("Password05*");
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+
+            /*ss = new StringSelection("Password05*");
             Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
             robot.delay(1000);
@@ -67,9 +71,9 @@ public class InjectedDriverIT {
             robot.keyRelease(KeyEvent.VK_ENTER);
 
             ss = new StringSelection("pisici");
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);*/
 
-            robot.delay(1000);
+            /*robot.delay(1000);
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_V);
             robot.keyRelease(KeyEvent.VK_V);
@@ -85,20 +89,10 @@ public class InjectedDriverIT {
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_TAB);
             robot.delay(1000);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_CONTROL);*/
             //driver.get(baseUrl.toString());
-
-           /* //googlePage = new GooglePage(driver);
-            //googlePage.search("Pisici");
-        *//*String originalWindow = driver.getWindowHandle();
-        driver.switchTo().window(originalWindow);*//*
-        //driver.switchTo().defaultContent();
-        WebElement input = driver.findElement(By.id("lst-ib"));
-        //new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(input));
-        input.click();
-        input.clear();
-        input.sendKeys("Marius Patru Linkedin");
-        WebElement search = driver.findElement(By.name("btnK"));
-        search.click();*/
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            WebElement buton = driver.findElement(By.xpath("//a[contains(@class, 'ng-scope') and text() ='CONTACTS']"));
+            buton.click();
     }
 }

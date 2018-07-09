@@ -90,7 +90,7 @@ public class WebDriverConfig {
     }
 
     @Bean
-    public URI baseUrl(@Value("${webdriver.baseUrl:https://www.google.com/?gws_rd=ssl}")URI value){
+    public URI baseUrl(@Value("${webdriver.baseUrl:https://baseinvestisseurs.dev.echonet/biv/app/index.html#!/biv/home}")URI value){
         return value;
     }
 }
