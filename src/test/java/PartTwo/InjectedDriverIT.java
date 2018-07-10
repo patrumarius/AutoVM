@@ -70,32 +70,16 @@ public class InjectedDriverIT {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 
-            Thread.sleep(5000);
+            robot.delay(3000);
+            ss = new StringSelection("Password05*");
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
-            //ss = new StringSelection("pisici");
-            //Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-
-            /*robot.delay(1000);
+            robot.delay(1000);
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_V);
             robot.keyRelease(KeyEvent.VK_V);
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
-            robot.delay(1000);
-
-
-            driver.switchTo().window(originalWindow);
-            
-            robot.delay(5000);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_TAB);
-            robot.delay(1000);
-            robot.keyRelease(KeyEvent.VK_CONTROL);*/
-            //driver.get(baseUrl.toString());
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.switchTo().activeElement();
-            WebElement buton = driver.findElement(By.xpath("//a[contains(@class, 'ng-scope') and text() ='CONTACTS']"));
-            buton.click();
     }
 }
