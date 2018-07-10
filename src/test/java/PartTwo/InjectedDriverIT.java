@@ -43,7 +43,7 @@ public class InjectedDriverIT {
             /*robot.keyRelease(KeyEvent.VK_ALT);
             robot.keyRelease(KeyEvent.VK_TAB);*/
 
-            /*robot.delay(1000);
+            robot.delay(1000);
             StringSelection ss = new StringSelection("b79630  ");
             Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
@@ -54,12 +54,12 @@ public class InjectedDriverIT {
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.delay(1000);
             robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);*/
+            robot.keyRelease(KeyEvent.VK_TAB);
 
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
+            //robot.keyPress(KeyEvent.VK_ENTER);
+            //robot.keyRelease(KeyEvent.VK_ENTER);
 
-            /*ss = new StringSelection("Password05*");
+            ss = new StringSelection("Password05*");
             Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
             robot.delay(1000);
@@ -70,8 +70,10 @@ public class InjectedDriverIT {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 
-            ss = new StringSelection("pisici");
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);*/
+            Thread.sleep(5000);
+
+            //ss = new StringSelection("pisici");
+            //Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 
             /*robot.delay(1000);
             robot.keyPress(KeyEvent.VK_CONTROL);
@@ -92,6 +94,7 @@ public class InjectedDriverIT {
             robot.keyRelease(KeyEvent.VK_CONTROL);*/
             //driver.get(baseUrl.toString());
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.switchTo().activeElement();
             WebElement buton = driver.findElement(By.xpath("//a[contains(@class, 'ng-scope') and text() ='CONTACTS']"));
             buton.click();
     }
