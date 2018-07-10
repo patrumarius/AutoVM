@@ -7,20 +7,18 @@ import org.openqa.selenium.support.FindBy;
 
 public class GooglePage extends PageObject{
 
-    @FindBy(name = "q")
+    @FindBy(id = "gb_70")
     private WebElement input;
 
-    @FindBy(name = "btnK")
-    private WebElement search;
+    /*@FindBy(name = "btnK")
+    private WebElement search;*/
 
     public GooglePage(WebDriver driver){
         super(driver);
     }
 
-    public void search(String query){
+    public void search(){
         input.click();
-        input.clear();
-        input.sendKeys(query);
-        search.click();
+
     }
 }

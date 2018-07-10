@@ -41,14 +41,14 @@ public class WebDriverConfig {
     public WebDriver webDriver(DesiredCapabilities desiredCapabilities){
                 switch (desiredCapabilities.getBrowserName()){
                     case BrowserType.IE:
+                        return new InternetExplorerDriver(desiredCapabilities);
+                    case BrowserType.CHROME:
                         return new ChromeDriver(desiredCapabilities);
                     case BrowserType.FIREFOX:
                         return new FirefoxDriver(desiredCapabilities);
                     default:
                         throw new IllegalStateException("unknown browser " + desiredCapabilities.getBrowserName());
                 }
-
-
     }
 
     private WebDriver localDriver(DesiredCapabilities desiredCapabilities) throws IOException {
