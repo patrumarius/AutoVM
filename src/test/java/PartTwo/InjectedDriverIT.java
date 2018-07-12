@@ -1,5 +1,6 @@
 package PartTwo;
 
+import org.apache.xpath.SourceTree;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
@@ -32,67 +33,13 @@ public class InjectedDriverIT {
 
     @Test
     public void loadIndexPage() throws Exception{
-
+            //driver.get(baseUrl.toString());
+            //driver.wait(9000);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.get(baseUrl.toString());
-            String originalWindow = driver.getWindowHandle();
-            Robot robot = new Robot();
-
-            //robot.keyPress(KeyEvent.VK_ALT);
-            //robot.keyPress(KeyEvent.VK_TAB);
-
-            robot.delay(1000);
-            /*robot.keyRelease(KeyEvent.VK_ALT);
-            robot.keyRelease(KeyEvent.VK_TAB);*/
-
-            robot.delay(1000);
-            StringSelection ss = new StringSelection("b79630  ");
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-
-            robot.delay(1000);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-            robot.delay(1000);
-            robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);
-
-            //robot.keyPress(KeyEvent.VK_ENTER);
-            //robot.keyRelease(KeyEvent.VK_ENTER);
-
-            ss = new StringSelection("Password05*");
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-
-            robot.delay(1000);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-
-            robot.delay(3000);
-            ss = new StringSelection("Password05*");
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-
-            robot.delay(1000);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-            robot.delay(2000);
-
-            //driver.getWindowHandle();
-            driver.getCurrentUrl();
-            /*driver.get(baseUrl.toString());
-            //((JavascriptExecutor) driver).executeScript("windows.focus();");
-            googlePage = new GooglePage(driver);
-            ((JavascriptExecutor) driver).executeScript("windows.focus();");
-            //googlePage.search("pisici");
-            //WebElement connect = driver.findElement(By.id("gb_70"));
-            //connect.click();
-            googlePage.search();*/
+            Thread.sleep(5000);
+            WebElement contactsPage = driver.findElement(By.xpath("//a[contains(@class, 'ng-scope') and text() ='CONTACTS']"));
+            contactsPage.click();
+            Thread.sleep(3000);
     }
 }
