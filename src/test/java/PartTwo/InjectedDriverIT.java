@@ -1,6 +1,7 @@
 package PartTwo;
 
 import org.apache.xpath.SourceTree;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
@@ -18,28 +19,28 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.net.URI;
 import java.util.concurrent.TimeUnit;
+import org.junit.Assert.*;
+import org.junit.Test;
+import sun.rmi.runtime.Log;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = WebDriverConfig.class)
-public class InjectedDriverIT {
+public class InjectedDriverIT extends LoginRobot{
 
     GooglePage googlePage;
+    //LoginRobot loginRobot;
 
-    @Inject
-    private WebDriver driver;
+    //@Inject
+   // private WebDriver driver;
 
     @Inject
     private URI baseUrl;
 
     @Test
     public void loadIndexPage() throws Exception{
-            //driver.get(baseUrl.toString());
-            //driver.wait(9000);
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.get(baseUrl.toString());
-            Thread.sleep(5000);
-            WebElement contactsPage = driver.findElement(By.xpath("//a[contains(@class, 'ng-scope') and text() ='CONTACTS']"));
-            contactsPage.click();
-            Thread.sleep(3000);
+        LoginRobot loginRobot = new LoginRobot();
+        //loginRobot.setUp();
     }
 }

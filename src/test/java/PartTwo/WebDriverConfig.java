@@ -17,6 +17,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import sun.security.krb5.internal.crypto.Des;
 
 import javax.inject.Inject;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
@@ -36,7 +37,7 @@ public class WebDriverConfig {
 
     @Bean
     public DesiredCapabilities desiredCapabilities(
-            @Value("${webdriver.capabilities.browserName:internet explorer}") String browserName
+            @Value("${webdriver.capabilities.browserName:chrome}") String browserName
     ){
         return new DesiredCapabilities(browserName, "", Platform.ANY);
     }
@@ -110,4 +111,6 @@ public class WebDriverConfig {
     public URI getUri(){
         return baseUri;
     }
+
+
 }
