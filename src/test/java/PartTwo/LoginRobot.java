@@ -54,12 +54,13 @@ public class LoginRobot {
         robot.keyRelease(KeyEvent.VK_DOWN);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        driver.manage().window().maximize();
         System.out.println("Robot OK");
 
-        /*WebDriverWait wait = new WebDriverWait(driver,3, 100);
+        WebDriverWait wait = new WebDriverWait(driver,3, 100);
         WebElement projectPage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'project-name')]")));
 
-        assertEquals("BASE INVEST",projectPage.getText());*/
+        assertEquals("BASE INVEST",projectPage.getText());
     }
 
 }

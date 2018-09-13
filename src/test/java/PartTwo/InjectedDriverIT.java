@@ -29,18 +29,16 @@ import static org.junit.Assert.assertEquals;
 @ContextConfiguration(classes = WebDriverConfig.class)
 public class InjectedDriverIT extends LoginRobot{
 
-    GooglePage googlePage;
-    //LoginRobot loginRobot;
-
-    //@Inject
-   // private WebDriver driver;
-
     @Inject
     private URI baseUrl;
 
     @Test
     public void loadIndexPage() throws Exception{
         LoginRobot loginRobot = new LoginRobot();
-        //loginRobot.setUp();
+    }
+
+    @Test
+    public void loadIndexPage2() throws Exception{
+        LoginRobot loginRobot = new LoginRobot();
     }
 }
